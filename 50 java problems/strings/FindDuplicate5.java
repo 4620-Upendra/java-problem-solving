@@ -1,0 +1,26 @@
+// 5.	Find duplicate characters
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class FindDuplicate5 {
+    public static void main(String[] args) {
+         Scanner s=new Scanner(System.in);
+        System.out.print("enter the string:");
+        String string=s.nextLine();
+        ArrayList<Character> arr=new ArrayList<>();
+        char [] arr1=string.toCharArray();
+        for(char ch:arr1){
+            arr.add(ch);
+        }
+        String result="";
+        for(int i=0;i<arr.size();i++){
+            for(int j=i+1;j<arr.size();j++){
+                if(arr.get(i).equals(arr.get(j))){
+                    result+=arr.get(i);
+                    result+=',';
+                }
+            }
+        }
+        System.out.println(" the duplicates are:"+result);
+    }
+}
